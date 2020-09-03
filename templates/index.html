@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<title>Home Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.w3-sidebar a {font-family: "Roboto", sans-serif}
+body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
+</style>
+<body class="w3-content" style="max-width:1200px;">
+<p class="text-monospace">Bienvenido, {{user}}</p>
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
+  <div class="w3-container w3-display-container w3-padding-16">
+    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+    <img src="resources/images/logo.jpeg" style="width:100%">
+    <!--<h3 class="w3-wide"><b>EJEMPLO</b></h3>-->
+  </div>
+  <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+    <a href="#" class="w3-bar-item w3-button">Alcohol Medicinal</a>
+    <a href="#" class="w3-bar-item w3-button">Alcohol en Gel</a>
+    <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
+      Lejía <i class="fa fa-caret-down"></i>
+    </a>
+    <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+      <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Clorox</a>
+      <a href="#" class="w3-bar-item w3-button">Sapolio</a>
+      <a href="#" class="w3-bar-item w3-button">Boreal</a>
+    </div>
+    <a href="#" class="w3-bar-item w3-button">Jabón Líquido</a>
+    <a href="#" class="w3-bar-item w3-button">Limpia Todo</a>
+    <a href="#" class="w3-bar-item w3-button">Pino</a>
+    <a href="#" class="w3-bar-item w3-button">Gel Clorado</a>
+    <a href="#" class="w3-bar-item w3-button">Saca Sarro</a>
+    <a href="#" class="w3-bar-item w3-button">Limpia Vidrios</a>
+    <a href="#" class="w3-bar-item w3-button">Banda Desinfectante</a>
+  </div>
+  <a href="#footer" class="w3-bar-item w3-button w3-padding">Contáctenos</a> 
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding" onclick="document.getElementById('newsletter').style.display='block'">Catálogo</a> 
+  <a href="#footer"  class="w3-bar-item w3-button w3-padding">Subscríbase</a>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+  <div class="w3-bar-item w3-padding-24 w3-wide">EJEMPLO</div>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:250px">
+
+  <!-- Push down content on small screens -->
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+  
+  <!-- Top header -->
+  <header class="w3-container w3-xlarge">
+    <p class="w3-left">Lejía</p>
+    <p class="w3-right">
+      <i class="fa fa-shopping-cart w3-margin-right"></i>
+      <i class="fa fa-search"></i>
+    </p>
+  </header>
+
+  <!-- Image header -->
+  <!--
+  <div class="w3-display-container w3-container">
+    <img src="resources/images/limpieza.jpg" alt="Jeans" style="width:100%">
+    <div class="w3-display-topleft w3-text-white" style="padding:24px 48px">
+      <h1 class="w3-jumbo w3-hide-small">Nuevos productos</h1>
+      <h1 class="w3-hide-large w3-hide-medium" style="color: black;">Nuevos productos</h1>
+      <h1 class="w3-hide-small">ANTICOVID - 2020</h1>
+      <p><a href="#jeans" class="w3-button w3-black w3-padding-large w3-large">COMPRE AHORA</a></p>
+    </div>
+  </div>
+  -->
+
+  <div class="w3-container w3-text-grey" id="jeans">
+    <p>8 items</p>
+  </div>
+
+  <!-- Product grid -->
+  <div class="w3-row w3-grayscale">
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="resources/images/lejia1.jpeg" style="width:100%">
+        <p>Lejía CLOROX Tradicional X 639 ML<br><b>S/2.50</b></p>
+      </div>
+      <div class="w3-container">
+        <img src="resources/images/lejia5.jpg" style="width:100%">
+        <p>Lejía CLOROX Flores de Lavanda Galonera 4000g<br><b>S/11.90</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="resources/images/lejia2.jpg" style="width:100%">
+          <span class="w3-tag w3-display-topleft">Nuevo</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">Compre ahora <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p>Lejía CLOROX Tradicional Galonera 4L<br><b>S/11.50</b></p>
+      </div>
+      <div class="w3-container">
+        <img src="resources/images/lejia6.jpg" style="width:100%">
+        <p>Lejía CLOROX Lavanda Botella 1Kg<br><b>S/2.50</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="resources/images/lejia3.jpg" style="width:100%">
+        <p>Lejía CLOROX Tradicional Galonera 4000g<br><b>S/11.50</b></p>
+      </div>
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="resources/images/lejia7.jpg" style="width:100%">
+          <span class="w3-tag w3-display-topleft">Oferta</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">Compre ahora <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p>Lejía CLOROX Triple Acción Botella 1Kg<br><b class="w3-text-red">S/2.50</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="resources/images/lejia4.jpg" style="width:100%">
+        <p>Lejía CLOROX Tradicional Galonera 2000g<br><b>S/6.60</b></p>
+      </div>
+      <div class="w3-container">
+        <img src="resources/images/lejia8.jpg" style="width:100%">
+        <p>Lejía CLOROX Anti-Splash Botella 1Kg<br><b>S/7.70</b></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Subscribe section -->
+  <div class="w3-container w3-black w3-padding-32" style="background-color: #11419B !important;">
+    <h1>Subscríbase</h1>
+    <p>Para tener ofertas especiales y beneficios VIP:</p>
+    <p><input class="w3-input w3-border" type="text" placeholder="Ingrese su e-mail" style="width:100%"></p>
+    <button type="button" class="w3-button w3-red w3-margin-bottom" style="background-color: #000000 !important;">Regístrese</button>
+  </div>
+  
+  <!-- Footer -->
+  <footer class="w3-padding-64 w3-light-grey w3-small w3-center" id="footer">
+    <div class="w3-row-padding">
+      <div class="w3-col s4">
+        <h4>Contáctenos</h4>
+        <p>¿Tiene dudas? Cuéntenos.</p>
+        <form action="/action_page.php" target="_blank">
+          <p><input class="w3-input w3-border" type="text" placeholder="Nombre Completo" name="Name" required></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Email" name="Email" required></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Asunto" name="Subject" required></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Mensaje" name="Message" required></p>
+          <button type="submit" class="w3-button w3-block w3-black" style="background-color: #000000 !important;">Enviar</button>
+        </form>
+      </div>
+
+      <div class="w3-col s4">
+        <h4>Sobre nosotros</h4>
+        <p><a href="#">Nosotros</a></p>
+        <p><a href="#">Trabaje con nosotros</a></p>
+        <p><a href="#">Lugar de recojo</a></p>
+        <p><a href="#">Métodos de Pago</a></p>
+        <p><a href="#">Gift card</a></p>
+        <p><a href="#">Reembolsos</a></p>
+        <p><a href="#">Ayuda</a></p>
+      </div>
+
+      <div class="w3-col s4 w3-justify">
+        <h4>Tienda</h4>
+        <p><i class="fa fa-fw fa-map-marker"></i> JBM</p>
+        <p><i class="fa fa-fw fa-phone"></i> 989022161</p>
+        <p><i class="fa fa-fw fa-envelope"></i> jbenatem@gmail.com</p>
+        <h4>Métodos de pago</h4>
+        <p><i class="fa fa-fw fa-cc-amex"></i> Yape</p>
+        <p><i class="fa fa-fw fa-credit-card"></i> Tarjetas de crédito</p>
+        <br>
+        <i class="fa fa-facebook-official w3-hover-opacity w3-large"></i>
+        <i class="fa fa-instagram w3-hover-opacity w3-large"></i>
+        <i class="fa fa-snapchat w3-hover-opacity w3-large"></i>
+        <i class="fa fa-pinterest-p w3-hover-opacity w3-large"></i>
+        <i class="fa fa-twitter w3-hover-opacity w3-large"></i>
+        <i class="fa fa-linkedin w3-hover-opacity w3-large"></i>
+      </div>
+    </div>
+  </footer>
+
+  <div class="w3-black w3-center w3-padding-24" style="background-color: #11419B !important;">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">JBM</a></div>
+
+  <!-- End page content -->
+</div>
+
+<!-- Newsletter Modal -->
+<div id="newsletter" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom" style="padding:32px">
+    <div class="w3-container w3-white w3-center">
+      <i onclick="document.getElementById('newsletter').style.display='none'" class="fa fa-remove w3-right w3-button w3-transparent w3-xxlarge"></i>
+      <h2 class="w3-wide">CATÁLOGO</h2>
+      <p>Regístrese en nuestra lista de correo para recibir nuestro cátalogo con cupónes de descuento.</p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Ingrese su e-mail"></p>
+      <button type="button" class="w3-button w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('newsletter').style.display='none'">Subscríbase</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Accordion 
+function myAccFunc() {
+  var x = document.getElementById("demoAcc");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// Click on the "Jeans" link on page load to open the accordion for demo purposes
+document.getElementById("myBtn").click();
+
+
+// Open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title%}Home Page{% endblock %}
+{% block content %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p>{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+<style>
+.w3-sidebar a {
+  font-family: "Roboto", sans-serif
+}
+body,h1,h2,h3,h4,h5,h6,.w3-wide {
+  font-family: "Montserrat", sans-serif;
+}
+aside {
+  float: right;
+  font-style: italic;
+}
+main {
+  float: left;
+}
+#nav_body {
+  float: none;
+}
+.img_dist_clase{
+  max-width: 60%;
+  height: auto;
+}
+</style>
+<p>&nbsp;</p>
+<p class="text-monospace">Bienvenido, {{user}}</p>
+<nav id="nav_body">
+  <ul>
+    <li><a href="#">Secondary nav</a></li>
+    <li><a href="#">Secondary nav</a></li>
+    <li><a href="#">Secondary nav</a></li>
+    <li><a href="#">Secondary nav</a></li>
+    <li><a href="#">Secondary nav</a></li>
+  </ul>
+</nav>
+<main>
+  <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td colspan="2">Larry the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+  </table>
+</main>
+<aside>
+  <section>
+    <div class="imgcontainer">
+      <img class="img_dist_clase" src="static/images/distribucion_clases.png" alt="Avatar">
+    </div>
+    <div class="imgcontainer">
+      <img class="img_dist_clase" src="static/images/distribucion_clases.png" alt="Avatar">
+    </div>
+  </section>
+</aside>
+{% endblock %}
+
