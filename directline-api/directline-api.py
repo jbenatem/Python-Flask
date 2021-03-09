@@ -13,7 +13,7 @@ def home():
 @app.route('/api/directline/tokens/generate', methods=['GET'])
 def generate_token():
     url = 'https://directline.botframework.com/v3/directline/tokens/generate'
-    secret = 'uzEqtToqsAY.jFKlI0ltLDzLjq0Kj_lD2YPTDempUQdxriJ7g3GWB-g'
+    secret = 'INSERT-DIRECT-LINE-SECRET-HERE'
     body = {'user':{"id": str(uuid4())}}
     x = requests.post(url, data = body, headers = {"Authorization": "Bearer" + " " + secret})
     return x.json()
